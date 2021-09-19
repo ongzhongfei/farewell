@@ -25,7 +25,7 @@ def page_content(page_number):
             st.image(pp, width=350,caption="Dr. Ong")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -41,7 +41,7 @@ def page_content(page_number):
         #### Chuan Hai
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\nch.png')
+            pp = Image.open(r'pic/nch.png')
             st.image(pp, width=350,caption="Chuan Hai")
         with eac_cols[1]:
             # """### gif from local file"""
