@@ -1,6 +1,8 @@
 import streamlit as st
 import base64
 from PIL import Image
+from pathlib import Path
+
 
 def page_content(page_number):
     if page_number == 0:
@@ -18,7 +20,8 @@ def page_content(page_number):
         #### Dr. Ong
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open('pic\\ohh.png')
+            pp_path = Path(__file__).parents[0] / 'pic/ohh.png'
+            pp = Image.open(pp_path)
             st.image(pp, width=350,caption="Dr. Ong")
         with eac_cols[1]:
             # """### gif from local file"""
