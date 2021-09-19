@@ -20,8 +20,8 @@ def page_content(page_number):
         #### Dr. Ong
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp_path = Path(__file__).parents[0] / 'pic/ohh.png'
-            pp = Image.open(pp_path)
+            # pp_path = Path(__file__).parents[0] / 'pic/ohh.png'
+            pp = Image.open("pic/ohh.png")
             st.image(pp, width=350,caption="Dr. Ong")
         with eac_cols[1]:
             # """### gif from local file"""
@@ -45,7 +45,7 @@ def page_content(page_number):
             st.image(pp, width=350,caption="Chuan Hai")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -62,11 +62,11 @@ def page_content(page_number):
         #### Muja
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\muja.png')
+            pp = Image.open(r'pic/muja.png')
             st.image(pp, width=350,caption="Mujahid")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -82,11 +82,11 @@ def page_content(page_number):
         #### Peter
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\peter.png')
+            pp = Image.open(r'pic/peter.png')
             st.image(pp, width=350,caption="Peter")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -103,11 +103,11 @@ def page_content(page_number):
         #### Josh
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\josh.png')
+            pp = Image.open(r'pic/josh.png')
             st.image(pp, width=350,caption="Joshua")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -121,11 +121,11 @@ def page_content(page_number):
         #### Ken
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\ken.png')
+            pp = Image.open(r'pic/ken.png')
             st.image(pp, width=350,caption="Ken")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -141,11 +141,11 @@ def page_content(page_number):
         #### Eilyn
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\eilyn.png')
+            pp = Image.open(r'pic/eilyn.png')
             st.image(pp, width=350,caption="Eilyn")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
@@ -162,11 +162,11 @@ def page_content(page_number):
         #### Zhong Fei
         eac_cols = st.columns([3.5,3])
         with eac_cols[0]:
-            pp = Image.open(r'pic\ozf.png')
+            pp = Image.open(r'pic/ozf.png')
             st.image(pp, width=350,caption="Zhong Fei")
         with eac_cols[1]:
             # """### gif from local file"""
-            file_ = open("messages\good luck.gif", "rb")
+            file_ = open("messages/good luck.gif", "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
             file_.close()
