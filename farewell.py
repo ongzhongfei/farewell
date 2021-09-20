@@ -3,6 +3,12 @@ import base64
 from PIL import Image
 from pathlib import Path
 
+st.set_page_config(
+    page_title="Congratss",
+    page_icon=(":partying_face:"),
+    # layout="wide",
+    # initial_sidebar_state="auto",
+)
 
 def page_content(page_number):
     if page_number == 0:
