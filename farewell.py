@@ -5,7 +5,7 @@ from pathlib import Path
 
 st.set_page_config(
     page_title="Congratss",
-    page_icon=(":partying_face:"),
+    page_icon=(":dancers:"),
     # layout="wide",
     # initial_sidebar_state="auto",
 )
