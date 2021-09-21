@@ -1,7 +1,14 @@
 import streamlit as st
 import base64
 from PIL import Image
-from pathlib import Path
+# from pathlib import Path
+
+#### Wordcloud
+# from os import path
+import numpy as np
+import matplotlib.pyplot as plt
+import random
+from wordcloud import WordCloud, STOPWORDS
 
 st.set_page_config(
     page_title="Congratss",
@@ -123,9 +130,47 @@ def page_content(page_number):
         st.write("\n")
         show_message('Zhong Fei')
 
+    elif page_number == 5:
+
+        #### Change text here
+        text = """I am a boy, good, good boy.
+        The numpy library is one of the most popular and helpful libraries that is used for handling multi-dimensional arrays and matrices. It is also used in combination with Pandas library to perform data analysis.
+
+        The Python os module is a built-in library, so you don't have to install it. To read more about handling files with os module, this DataCamp tutorial will be helpful.
+
+        For visualization, matplotlib is a basic library that enables many other libraries to run and plot on its base including seaborn or wordcloud that you will use in this tutorial. The pillow library is a package that enables image reading. Its tutorial can be found here. Pillow is a wrapper for PIL - Python Imaging Library. You will need this library to read in image as the mask for the wordcloud.
+
+        wordcloud can be a little tricky to install. If you only need it for plotting a basic wordcloud, then pip install wordcloud or conda install -c conda-forge wordcloud would be sufficient. However, the latest version with the ability to mask the cloud into any shape of your choice requires a different method of installation as below:
+        """
+
+        def grey_color_func(word, font_size, position, orientation, random_state=None,
+                            **kwargs):
+            return "hsl(0, 0%%, %d%%)" % random.randint(60, 100)
+        naz_mask = np.array(Image.open("pic/naz-removebg-preview.png"))
+
+        stopwords = set(STOPWORDS)
+        stopwords.add("said")
+
+        # generate word cloud
+        wc = WordCloud(background_color="black", max_words=2000, mask=naz_mask,
+                    stopwords=stopwords, contour_width=0.8, contour_color='steelblue',width=1600, height=800).generate(text)
+
+
+        # show
+        fig = plt.figure(figsize=[20, 10], facecolor='k')
+        # plt.imshow(wc, interpolation='bilinear')
+        plt.imshow(wc.recolor(color_func=grey_color_func, random_state=3),
+                interpolation="bilinear")
+        plt.axis("off")
+        plt.tight_layout(pad=0)
+
+        wc_cols = st.columns([0.7,1,0.7])
+        with wc_cols[1]:
+            st.pyplot(fig)
+
 
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 0
+    st.session_state['page_num'] = 5
     page_content(st.session_state['page_num'])
 
 # st.write(st.session_state.page_num)
@@ -148,5 +193,5 @@ with cols[0]:
         st.button("Previous", on_click=previous_page)
 
 with cols[1]:
-    if st.session_state['page_num'] !=4:
+    if st.session_state['page_num'] !=5:
         st.button("Next", on_click=next_page)
