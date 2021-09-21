@@ -92,13 +92,16 @@ def show_message(member):
 
 def page_content(page_number):
     if page_number == 0:
-        st.header("Congratulations! and goodbye...")
-        st.write("\n")
-        st.write(
-            f"""<p style="text-align:center;"><img src="https://media3.giphy.com/media/6nuiJjOOQBBn2/200w.webp?cid=ecf05e47xcmnv9n8vasc1d01665fpyw6u8qee6tg305wyews&rid=200w.webp&ct=g" style="width:500px;height:450px;"></p>""",
-            unsafe_allow_html=True,
-        )
-        st.write("\n")
+        cols = st.columns([1,1,1])
+
+        with cols[1]:
+            st.header("Congratulations! and goodbye...")
+            st.write("\n")
+            st.write(
+                f"""<p style="text-align:center;"><img src="https://media3.giphy.com/media/6nuiJjOOQBBn2/200w.webp?cid=ecf05e47xcmnv9n8vasc1d01665fpyw6u8qee6tg305wyews&rid=200w.webp&ct=g" style="width:500px;height:450px;"></p>""",
+                unsafe_allow_html=True,
+            )
+            st.write("\n")
     elif page_number == 1:
         st.header("""If work is your second home. Here is your 'second parent'""")
         show_message('Dr. Ong')
@@ -170,7 +173,7 @@ def page_content(page_number):
 
 
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 5
+    st.session_state['page_num'] = 0
     page_content(st.session_state['page_num'])
 
 # st.write(st.session_state.page_num)
