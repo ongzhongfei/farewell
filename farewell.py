@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import random
 from wordcloud import WordCloud, STOPWORDS
 
+import pandas as pd 
+
+
 st.set_page_config(
     page_title="Congratss",
     page_icon=(":dancers:"),
@@ -68,6 +71,18 @@ DSA_member_messages = {
     },
 }
 
+@st.cache()
+def get_jps_messages():
+    jps_survey = pd.read_excel("Farewell message to Khairul Nazran.xlsx")
+
+    survey_cols = jps_survey.columns
+    jps_survey[survey_cols[7]] = jps_survey[survey_cols[7]].fillna("Anonymous")
+
+    jps_messages = jps_survey.set_index(survey_cols[6]).to_dict()[survey_cols[7]]
+    return jps_messages
+
+
+@st.cache
 def show_message(member):
 
     eac_cols = st.columns([3.5,3,5])
@@ -178,6 +193,24 @@ def page_content(page_number):
 
     elif page_number == 6:
         st.header("Messages from your fellow JPS-ians!")
+        jps_messages = get_jps_messages()
+        # st.write(jps_messages)
+        count = 0
+        for message, people in jps_messages.items():
+            cols_to_write = st.columns([1,3,3,1])
+            if count % 2 == 0:
+                col_picked = 1
+            else:
+                col_picked = 2
+            cols_to_write[col_picked].write(
+                f"""<span style="font-size:18px"> {message.strip()}</span>  -  <span style="color:#FFC0CB;font-size:20px"> <b>{people}</b></span>""",
+                unsafe_allow_html=True,
+            )
+            count +=1
+            # cols[7].write(
+            #     f"""<i><span style="font-size:18px"> (Likelihood Not Selected) </span></i>""",
+            #     unsafe_allow_html=True,
+            # )
 
     elif page_number == 7:
         st.header("Unable to meet because of MCO... but we still have these!")
@@ -185,7 +218,7 @@ def page_content(page_number):
         st.image(pp, width=350)
 
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 0
+    st.session_state['page_num'] = 6
     page_content(st.session_state['page_num'])
 
 # st.write(st.session_state.page_num)
