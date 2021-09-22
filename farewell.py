@@ -82,7 +82,6 @@ def get_jps_messages():
     return jps_messages
 
 
-@st.cache
 def show_message(member):
 
     eac_cols = st.columns([3.5,3,5])
