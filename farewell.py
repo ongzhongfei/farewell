@@ -218,7 +218,7 @@ def page_content(page_number):
         st.image(pp, width=350)
 
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 6
+    st.session_state['page_num'] = 0
     page_content(st.session_state['page_num'])
 
 # st.write(st.session_state.page_num)
