@@ -258,5 +258,5 @@ with cols[0]:
         st.button("Previous", on_click=previous_page)
 
 with cols[1]:
-    if st.session_state['page_num'] != 5:
+    if st.session_state['page_num'] != 6:
         st.button("Next", on_click=next_page)
