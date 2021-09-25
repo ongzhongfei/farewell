@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 import random
 from wordcloud import WordCloud, STOPWORDS
 
-import pandas as pd 
+import pandas as pd
+import wordcloud 
 
 
 st.set_page_config(
@@ -75,11 +76,26 @@ DSA_member_messages = {
 def get_jps_messages():
     jps_survey = pd.read_excel("Farewell message to Khairul Nazran.xlsx")
 
+
+    #### JPS messages
     survey_cols = jps_survey.columns
     jps_survey[survey_cols[7]] = jps_survey[survey_cols[7]].fillna("Anonymous")
-
     jps_messages = jps_survey.set_index(survey_cols[6]).to_dict()[survey_cols[7]]
-    return jps_messages
+
+    #### One word adjectives
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("Serious but Not Serious","Serious_but_not_serious")
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("(one word not enough ;p)",'')
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("(Is there no problem he can’t fix)",'')
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("Nice person",'Nice')
+
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("?",'',regex=False)
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace("(",'',regex=False)
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.replace(")",'',regex=False)
+    jps_survey[survey_cols[5]] = jps_survey[survey_cols[5]].str.title().str.strip()
+    wordcloud_adjectives = ' '.join(jps_survey[survey_cols[5]].fillna(''))
+
+
+    return jps_messages, wordcloud_adjectives
 
 
 def show_message(member):
@@ -120,6 +136,8 @@ def get_wordcloud(text):
                 stopwords=stopwords, contour_width=0.8, contour_color='steelblue',width=1600, height=800).generate(text)
 
     return wc
+jps_messages, wordcloud_adjectives = get_jps_messages()
+
 
 def page_content(page_number):
     if page_number == 0:
@@ -137,7 +155,7 @@ def page_content(page_number):
         st.header("""If work is your second home. Here is your 'second parent'""")
         show_message('Dr. Ong')
 
-    elif page_number == 2:
+        st.write("***")
         st.header("And here are your homies...")
 
         show_message('Chuan Hai')   
@@ -145,7 +163,7 @@ def page_content(page_number):
         st.write("\n")
         show_message('Mujahid')        
 
-    elif page_number == 3:
+    elif page_number == 2:
         st.header("Nerdy neighbours...")
         #### Peter
         show_message('Peter')   
@@ -155,8 +173,16 @@ def page_content(page_number):
         st.write("\n")
         st.write("\n")
         show_message('Ken')
+        st.write("\n")
+        st.write("\n")
+        # st.write("***")
+        # st.header("Neighbours next door...")
 
-    elif page_number == 4:
+        # show_message('Eilyn')   
+        # st.write("\n")
+        # st.write("\n")
+        # show_message('Zhong Fei')
+    elif page_number == 3:
         st.header("Neighbours next door...")
 
         show_message('Eilyn')   
@@ -164,18 +190,10 @@ def page_content(page_number):
         st.write("\n")
         show_message('Zhong Fei')
 
-    elif page_number == 5:
-        st.header("In JPS-ians' memory, Youa re always...")
+    elif page_number == 4:
+        st.header("In JPS-ians' memory, Youa re always... :sunglasses:")
         #### Change text here
-        text = """I am a boy, good, good boy.
-        The numpy library is one of the most popular and helpful libraries that is used for handling multi-dimensional arrays and matrices. It is also used in combination with Pandas library to perform data analysis.
-
-        The Python os module is a built-in library, so you don't have to install it. To read more about handling files with os module, this DataCamp tutorial will be helpful.
-
-        For visualization, matplotlib is a basic library that enables many other libraries to run and plot on its base including seaborn or wordcloud that you will use in this tutorial. The pillow library is a package that enables image reading. Its tutorial can be found here. Pillow is a wrapper for PIL - Python Imaging Library. You will need this library to read in image as the mask for the wordcloud.
-
-        wordcloud can be a little tricky to install. If you only need it for plotting a basic wordcloud, then pip install wordcloud or conda install -c conda-forge wordcloud would be sufficient. However, the latest version with the ability to mask the cloud into any shape of your choice requires a different method of installation as below:
-        """
+        text = wordcloud_adjectives
 
         wc = get_wordcloud(text)
         # show
@@ -190,9 +208,9 @@ def page_content(page_number):
         with wc_cols[1]:
             st.pyplot(fig)
 
-    elif page_number == 6:
-        st.header("Messages from your fellow JPS-ians!")
-        jps_messages = get_jps_messages()
+    elif page_number == 5:
+        st.header("""Messages from your fellow JPS-ians! :man-woman-girl-boy:""")
+        
         # st.write(jps_messages)
         count = 0
         for message, people in jps_messages.items():
@@ -211,7 +229,7 @@ def page_content(page_number):
             #     unsafe_allow_html=True,
             # )
 
-    elif page_number == 7:
+    elif page_number == 6:
         st.header("Unable to meet because of MCO... but we still have these!")
         pp = Image.open('naz_photos/naz_office.jpg')
         st.image(pp, width=350)
@@ -240,5 +258,5 @@ with cols[0]:
         st.button("Previous", on_click=previous_page)
 
 with cols[1]:
-    if st.session_state['page_num'] !=7:
+    if st.session_state['page_num'] != 5:
         st.button("Next", on_click=next_page)
