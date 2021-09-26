@@ -243,7 +243,7 @@ def page_content(page_number):
         show_message('Zhong Fei')
 
     elif page_number == 4:
-        st.header("In JPS-ians' memory, Youa re always... :sunglasses:")
+        st.header("In JPS-ians' memory, You're always... :sunglasses:")
         #### Change text here
         text = wordcloud_adjectives
 
