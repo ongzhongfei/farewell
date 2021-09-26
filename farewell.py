@@ -24,51 +24,76 @@ st.set_page_config(
 DSA_member_messages = {
     'Dr. Ong': {
         'pic':"pic/ohh.png",
+        'pic_caption':'Dr. Ong',
         'gif':'messages/good luck.gif',
         'message': "All the best to you!",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#52D273",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Chuan Hai':{
         'pic':"pic/nch.png",
+        'pic_caption':'Chuan Hai',
         'gif':'messages/good luck.gif',
         'message': "Congratulations on your new job. Wishing you all the best.",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#52D273",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Mujahid':{
         'pic':"pic/muja.png",
+        'pic_caption':'Mujahid',
         'gif':'messages/good luck.gif',
         'message': "It was an honor to work with a coworker who was committed to their success and their coworkers. You deserve nothing but the best!",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#52D273",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Peter':{
         'pic':"pic/peter.png",
+        'pic_caption':'Peter',
         'gif':'messages/good luck.gif',
         'message': "We will remember you with warm thoughts and memories. Best wishes to you in the future.",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#46BCDE",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Joshua':{
         'pic':"pic/josh.png",
+        'pic_caption':'Joshua',
         'gif':'messages/good luck.gif',
         'message': "No matter where you work, you will always be my friend until the end. Good luck with your new job. I know you’re going to do great.",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#46BCDE",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Ken':{
         'pic':"pic/ken.png",
+        'pic_caption':'Ken',
         'gif':'messages/good luck.gif',
         'message': "Even though we were not able to work as closely together as I would have liked, I would love to stay in touch with you as you progress throughout your career. Best wishes!",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        "text_color":"#46BCDE",
+        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video_text':"",
     },
     'Eilyn':{
-        'pic':"pic/eilyn.png",
-        'gif':'messages/good luck.gif',
-        'message': "I hope your experience with your next employer is as fun as the time we had here. Best of luck and thank you for everything!",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        'pic':"pic/eilyn_pp.jpg",
+        'pic_caption':'Pika Eilyn',
+        'gif':'messages/eilyn_message.png',
+        'message': "Naz, I am so glad to be working along with you over the past year! I will miss our Kpop chatter, ranting sesh, and the random conversations about our personal visions.  I hope our paths will cross again – let’s catch up whenever IU (or any GFriend members) releases her new album/single! Until then …",
+        # "I hope your experience with your next employer is as fun as the time we had here. Best of luck and thank you for everything!",
+        "text_color":"#C8A2C8",
+        'video':"https://www.youtube.com/watch?v=v7bnOxV4jAc",
+        'video_text':"As befitting your upcoming journey, I wish to dedicate for your listening pleasure IU’s Lilac, which means 'memories of youth' – a farewell to your past chapter and hopeful greetings for the next one.",
     },
     'Zhong Fei':{
-        'pic':"pic/ozf.png",
-        'gif':'messages/good luck.gif',
-        'message': "Your new team is lucky to have you on board. Wishing you great success in your new role.",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI"
+        'pic':"pic/zhongfei_pp.jpeg",
+        'pic_caption':'First time touch pet rabbit',
+        'gif':'messages/i-bid-you-farewell-good-luck.gif',
+        'message': "Sincerely thank you for all the knowledge you taught since I am in from day 1. Your new team is lucky to have you on board. Wishing you great success in your new role.",
+        "text_color":"#C8A2C8",
+        'video':"https://www.youtube.com/watch?v=D1PvIWdJ8xo",
+        'video_text':"My go to song during down times... (and of course it's good during happy times too!)",
     },
 }
 
@@ -103,7 +128,7 @@ def show_message(member):
     eac_cols = st.columns([3.5,3,5])
     with eac_cols[0]:
         pp = Image.open(DSA_member_messages[member]['pic'])
-        st.image(pp, width=350,caption=member)
+        st.image(pp, width=350,caption=DSA_member_messages[member]['pic_caption'])
     with eac_cols[1]:
         # """### gif from local file"""
         file_ = open(DSA_member_messages[member]['gif'], "rb")
@@ -112,12 +137,13 @@ def show_message(member):
         file_.close()
 
         st.write(
-            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:float:right;300px;height:240px;"></p>""",
+            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:float:right;400px;height:400px;"></p>""",
             unsafe_allow_html=True,
         )
-        st.write(DSA_member_messages[member]['message'])
+        st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> {DSA_member_messages[member]['message']}</span>""",unsafe_allow_html=True)
     with eac_cols[2]:
-
+        if DSA_member_messages[member]['video_text'] != '':
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:16px"> {DSA_member_messages[member]['video_text']}</span>""",unsafe_allow_html=True)
         st.video(DSA_member_messages[member]['video'])
 
 def grey_color_func(word, font_size, position, orientation, random_state=None,
@@ -168,19 +194,27 @@ def page_content(page_number):
             )
             st.write("\n")
     elif page_number == 1:
-        st.header("""If work is your second home. Here is your 'second parent'""")
+        st.write(
+            f"""<span style="color:#52D273;font-size:40px"> <b> If work is your second home. Here is your 'second parent'</b></span>""",
+            unsafe_allow_html=True,
+        )
         show_message('Dr. Ong')
 
         st.write("***")
-        st.header("And here are your homies...")
-
+        st.write(
+            f"""<span style="color:#52D273;font-size:40px"> <b> And here are your homies...</b></span>""",
+            unsafe_allow_html=True,
+        )
         show_message('Chuan Hai')   
         st.write("\n")
         st.write("\n")
         show_message('Mujahid')        
 
     elif page_number == 2:
-        st.header("Nerdy neighbours...")
+        st.write(
+            f"""<span style="color:#46BCDE;font-size:40px"> <b> Your nerdy neighbours...</b></span>""",
+            unsafe_allow_html=True,
+        )
         #### Peter
         show_message('Peter')   
         st.write("\n")
@@ -199,8 +233,10 @@ def page_content(page_number):
         # st.write("\n")
         # show_message('Zhong Fei')
     elif page_number == 3:
-        st.header("Neighbours next door...")
-
+        st.write(
+            f"""<span style="color:#C8A2C8;font-size:40px"> <b> And neighbours next door...</b></span>""",
+            unsafe_allow_html=True,
+        )
         show_message('Eilyn')   
         st.write("\n")
         st.write("\n")
