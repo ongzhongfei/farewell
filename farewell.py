@@ -88,7 +88,7 @@ DSA_member_messages = {
     },
     'Zhong Fei':{
         'pic':"pic/zhongfei_pp.jpeg",
-        'pic_caption':'First time touch pet rabbit',
+        'pic_caption':'First time petting a rabbit',
         'gif':'messages/i-bid-you-farewell-good-luck.gif',
         'message': "Sincerely thank you for all the knowledge you taught since I am in from day 1. Your new team is lucky to have you on board. Wishing you great success in your new role.",
         "text_color":"#C8A2C8",
@@ -338,6 +338,12 @@ def page_content(page_number):
         cols[2].image(gsy3, width=500)
         # gsy4 = Image.open('naz_photos/gsy4.jpeg')
         # cols[3].image(gsy4, width=400)
+
+        st.write('\n\n')
+        st.write(
+            f"""<p style="text-align:right;color:#FFCC66;font-size:50px"> <b><i> Good Luck in Your Future Endeavors!</b></i></p>""",
+            unsafe_allow_html=True,
+        )
 
 if 'page_num' not in st.session_state:
     st.session_state['page_num'] = 0
