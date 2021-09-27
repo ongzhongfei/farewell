@@ -11,12 +11,11 @@ import random
 from wordcloud import WordCloud, STOPWORDS
 
 import pandas as pd
-import wordcloud 
 
 
 st.set_page_config(
     page_title="Congratss",
-    page_icon=(":dancers:"),
+    page_icon=(":tada:"),
     layout="wide",
     # initial_sidebar_state="auto",
 )
@@ -25,11 +24,11 @@ DSA_member_messages = {
     'Dr. Ong': {
         'pic':"pic/ohh.png",
         'pic_caption':'Dr. Ong',
-        'gif':'messages/good luck.gif',
-        'message': "All the best to you!",
+        'gif':'messages/ohh_message.jfif',
+        'message': "The Virtual Get-together that you organised was a memorable one.  Don't be a stranger and let's keep in touch. Best wishes",
         "text_color":"#52D273",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
-        'video_text':"",
+        'video':"https://www.youtube.com/watch?v=tbnzAVRZ9Xc",
+        'video_text':"It takes courage to pursue a dream.",
     },
     'Chuan Hai':{
         'pic':"pic/nch.png",
@@ -172,10 +171,9 @@ def page_content(page_number):
         with cols[1]:
             # st.header("Congratulations! and goodbye...")
             st.write(
-                f"""<span style="color:#00FFFF;font-size:40px"> <b> Congratulations! and goodbye... </b></span>""",
+                f"""<span style="color:#00FFFF;font-size:33px"> <b> Congratulations! and goodbye... <br>to the Meme Master</b></span>""",
                 unsafe_allow_html=True,
             )
-            st.write("\n")
 
             st.subheader("The Usual Naz... :male-office-worker:")
             naz_office = Image.open('naz_photos/naz_office.jpg')
@@ -183,7 +181,7 @@ def page_content(page_number):
             naz_pp = Image.open('naz_photos/naz.png')
             st.image(naz_pp, width=380)
 
-            st.write("<br>",unsafe_allow_html=True)
+            # st.write("<br>",unsafe_allow_html=True)
             st.write("<br>",unsafe_allow_html=True)
 
 
