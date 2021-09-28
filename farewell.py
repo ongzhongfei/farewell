@@ -25,6 +25,7 @@ DSA_member_messages = {
         'pic':"pic/ohh.png",
         'pic_caption':'Dr. Ong',
         'gif':'messages/ohh_message.jfif',
+        'gif_width': '380',
         'message': "The Virtual Get-together that you organised was a memorable one.  Don't be a stranger and let's keep in touch. Best wishes",
         "text_color":"#52D273",
         'video':"https://www.youtube.com/watch?v=tbnzAVRZ9Xc",
@@ -34,51 +35,61 @@ DSA_member_messages = {
         'pic':"pic/nch_pp.jpg",
         'pic_caption':'Chuan Hai',
         'gif':'messages/feeling.gif',
+        'gif_width': '380',
         'message': "Congratulations on your new job. Wishing you all the best.",
         "text_color":"#52D273",
         'video':"https://www.youtube.com/watch?v=sVJQZ16Da_A",
         'video_text':"",
     },
     'Mujahid':{
-        'pic':"pic/muja.png",
-        'pic_caption':'Mujahid',
-        'gif':'messages/good luck.gif',
-        'message': "It was an honor to work with a coworker who was committed to their success and their coworkers. You deserve nothing but the best!",
+        'pic':"pic/Muja and Naz.jpeg",
+        'pic_caption':'Me and Naz on our first hackathon win together!',
+        'gif':'messages/im-happy-for-you-mia.gif',
+        'gif_width': '380',
+        'message': """
+            Working with you felt really good. We would often bounce ideas off of each other and it felt really natural and exciting. You're more than a colleague to me; you're an inspiration, a mentor and a senpai to me. I appreciate the moments where you guided me in navigating the BNM world. You exposed me to the gems and you steered me away from the bullshit, and I take your advice very seriously. \
+                <br><br>I do feel sad that you are leaving us, and I admit, the reasons for that are mainly for selfish reasons as I feel like I could still learn so much more from you. But it's sort of like a bittersweet thing; I do feel sad that you're leaving us, but at the same time, I feel very excited for you with this new opportunity and journey that you're partaking, and I'm excited, I'm really, really excited that you can finally spread your wings after feeling trapped for so long. \
+                <br><br>I know it's going to be a lot of pressure for you, breaking the BNM bond is definitely not an easy decision to make but I'm proud of you for taking that step and doing what's right for you, for your career and for your future. I only hope that we stay in touch and keep the connection alive, and I wish you all the success in life.
+        """,
         "text_color":"#52D273",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
-        'video_text':"",
+        'video':"https://www.youtube.com/watch?v=NqJ9I7HyYws",
+        'video_text':"""This song is a letter for those afraid of losing their self due to life and the pressures that come with it. As you go through your next chapter in life, I hope this song can serve as reminder for you to stay your humble self and not forget the "kid you used to know".""",
     },
     'Peter':{
         'pic':"pic/peter.png",
         'pic_caption':'Peter',
         'gif':'messages/i-dont-always-win-the-hackathon-but-at-least-i-look-good-trying.jpg',
+        'gif_width': '350',
         'message': "Otai never really goes way. They linger on , for what they have done will echo in eternity.<br>Makan with me ya when we can?",
         "text_color":"#46BCDE",
         'video':"https://www.youtube.com/watch?v=zuf1KuibAeY",
         'video_text':"Go where Naz has not gone before",
     },
     'Joshua':{
-        'pic':"pic/josh.png",
-        'pic_caption':'Joshua',
-        'gif':'messages/good luck.gif',
+        'pic':"pic/josh_pp_brighter.png",
+        'pic_caption':'Keep living the Google dream',
+        'gif':'messages/bernie_meme.jpg',
+        'gif_width': '350',
         'message': "No matter where you work, you will always be my friend until the end. Good luck with your new job. I know you’re going to do great.",
         "text_color":"#46BCDE",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
-        'video_text':"",
+        'video':"https://www.youtube.com/watch?v=jStNaVCW838",
+        'video_text':"To the most jiwang man I know. Karaoke, we must.",
     },
     'Ken':{
         'pic':"pic/ken.png",
         'pic_caption':'Ken',
-        'gif':'messages/good luck.gif',
-        'message': "Even though we were not able to work as closely together as I would have liked, I would love to stay in touch with you as you progress throughout your career. Best wishes!",
+        'gif':'messages/ken_goodbye.png',
+        'gif_width': '300',
+        'message': "Good luck & all the best Naz! Appreciate your guidance and help all this while especially when I was still new to Python (plz forgive me for my spaghetti codes :wink:). Working with you was a pleasure and I personally learnt a lot from you. Hope someday our paths will cross again :hugging_face:",
         "text_color":"#46BCDE",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video':"https://www.youtube.com/watch?v=RgKAFK5djSk",
         'video_text':"",
     },
     'Eilyn':{
         'pic':"pic/eilyn_pp.jpg",
         'pic_caption':'Pika Eilyn',
         'gif':'messages/eilyn_message.png',
+        'gif_width': '280',
         'message': "Naz, I am so glad to be working along with you over the past year! I will miss our Kpop chatter, ranting sesh, and the random conversations about our personal visions.  I hope our paths will cross again – let’s catch up whenever IU (or any GFriend members) releases her new album/single! Until then …",
         # "I hope your experience with your next employer is as fun as the time we had here. Best of luck and thank you for everything!",
         "text_color":"#C8A2C8",
@@ -89,6 +100,7 @@ DSA_member_messages = {
         'pic':"pic/zhongfei_pp.jpeg",
         'pic_caption':'First time petting a rabbit',
         'gif':'messages/i-bid-you-farewell-good-luck.gif',
+        'gif_width': '280',
         'message': "Sincerely thank you for all the knowledge you taught since I am in from day 1. Your new team is lucky to have you on board. Wishing you great success in your new role.",
         "text_color":"#C8A2C8",
         'video':"https://www.youtube.com/watch?v=D1PvIWdJ8xo",
@@ -121,13 +133,18 @@ def get_jps_messages():
 
     return jps_messages, wordcloud_adjectives
 
-
 def show_message(member):
 
     eac_cols = st.columns([2.8,3,5.5])
     with eac_cols[0]:
         pp = Image.open(DSA_member_messages[member]['pic'])
-        st.image(pp, width=350,caption=DSA_member_messages[member]['pic_caption'])
+        if member == "Joshua":
+            st.image(pp, width=450,caption=DSA_member_messages[member]['pic_caption'])
+        elif member =="Mujahid":
+            st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> I would like to start off by thanking you for opening so many doors for me. The fact that I'm here in this team, in DSA, is because of you. Other opportunities like the hackathons, the wins, the exposure, the street cred and the connections that I've made in the community were none other because of you.</span>""",unsafe_allow_html=True)
+        else:
+            st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
     with eac_cols[1]:
         # """### gif from local file"""
         file_ = open(DSA_member_messages[member]['gif'], "rb")
@@ -136,7 +153,7 @@ def show_message(member):
         file_.close()
 
         st.write(
-            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:300px;height:400px;float:center"></p>""",
+            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:{DSA_member_messages[member]['gif_width']}px;height:400px;float:center"></p>""",
             unsafe_allow_html=True,
         )
         st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> {DSA_member_messages[member]['message']}</span>""",unsafe_allow_html=True)
@@ -316,8 +333,8 @@ def page_content(page_number):
         cols[0].image(naz_office, width=500)
         naz_pp = Image.open('naz_photos/naz.png')
         cols[2].image(naz_pp, width=280)
-        gsy4 = Image.open('naz_photos/gsy4.jpeg')
-        cols[4].image(gsy4, width=580)
+        gsy4 = Image.open('naz_photos/Hackathon win with Naz.jpeg')
+        cols[4].image(gsy4, width=400)
 
 
         #### DSA
