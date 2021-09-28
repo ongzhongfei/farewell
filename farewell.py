@@ -31,12 +31,12 @@ DSA_member_messages = {
         'video_text':"It takes courage to pursue a dream.",
     },
     'Chuan Hai':{
-        'pic':"pic/nch.png",
+        'pic':"pic/nch_pp.jpg",
         'pic_caption':'Chuan Hai',
-        'gif':'messages/good luck.gif',
+        'gif':'messages/feeling.gif',
         'message': "Congratulations on your new job. Wishing you all the best.",
         "text_color":"#52D273",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
+        'video':"https://www.youtube.com/watch?v=sVJQZ16Da_A",
         'video_text':"",
     },
     'Mujahid':{
@@ -51,11 +51,11 @@ DSA_member_messages = {
     'Peter':{
         'pic':"pic/peter.png",
         'pic_caption':'Peter',
-        'gif':'messages/good luck.gif',
-        'message': "We will remember you with warm thoughts and memories. Best wishes to you in the future.",
+        'gif':'messages/i-dont-always-win-the-hackathon-but-at-least-i-look-good-trying.jpg',
+        'message': "Otai never really goes way. They linger on , for what they have done will echo in eternity.<br>Makan with me ya when we can?",
         "text_color":"#46BCDE",
-        'video':"https://www.youtube.com/watch?v=TM5RGrV77eI",
-        'video_text':"",
+        'video':"https://www.youtube.com/watch?v=zuf1KuibAeY",
+        'video_text':"Go where Naz has not gone before",
     },
     'Joshua':{
         'pic':"pic/josh.png",
@@ -124,7 +124,7 @@ def get_jps_messages():
 
 def show_message(member):
 
-    eac_cols = st.columns([3.5,3,5])
+    eac_cols = st.columns([2.8,3,5.5])
     with eac_cols[0]:
         pp = Image.open(DSA_member_messages[member]['pic'])
         st.image(pp, width=350,caption=DSA_member_messages[member]['pic_caption'])
@@ -136,7 +136,7 @@ def show_message(member):
         file_.close()
 
         st.write(
-            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:float:right;400px;height:400px;"></p>""",
+            f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:300px;height:400px;float:center"></p>""",
             unsafe_allow_html=True,
         )
         st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> {DSA_member_messages[member]['message']}</span>""",unsafe_allow_html=True)
