@@ -26,7 +26,7 @@ DSA_member_messages = {
         'pic_caption':'Dr. Ong',
         'gif':'messages/ohh_message.jfif',
         'gif_width': '380',
-        'message': "The Virtual Get-together that you organised was a memorable one.  Don't be a stranger and let's keep in touch. Best wishes",
+        'message': "The Virtual Get-together that you organised was a memorable one.  Don't be a stranger and let's keep in touch. Best wishes.",
         "text_color":"#52D273",
         'video':"https://www.youtube.com/watch?v=tbnzAVRZ9Xc",
         'video_text':"It takes courage to pursue a dream.",
@@ -47,8 +47,7 @@ DSA_member_messages = {
         'gif':'messages/im-happy-for-you-mia.gif',
         'gif_width': '380',
         'message': """
-            Working with you felt really good. We would often bounce ideas off of each other and it felt really natural and exciting. You're more than a colleague to me; you're an inspiration, a mentor and a senpai to me. I appreciate the moments where you guided me in navigating the BNM world. You exposed me to the gems and you steered me away from the bullshit, and I take your advice very seriously. \
-                <br><br>I do feel sad that you are leaving us, and I admit, the reasons for that are mainly for selfish reasons as I feel like I could still learn so much more from you. But it's sort of like a bittersweet thing; I do feel sad that you're leaving us, but at the same time, I feel very excited for you with this new opportunity and journey that you're partaking, and I'm excited, I'm really, really excited that you can finally spread your wings after feeling trapped for so long. \
+                <br>I do feel sad that you are leaving us, and I admit, the reasons for that are mainly for selfish reasons as I feel like I could still learn so much more from you. But it's sort of like a bittersweet thing; I do feel sad that you're leaving us, but at the same time, I feel very excited for you with this new opportunity and journey that you're partaking, and I'm excited, I'm really, really excited that you can finally spread your wings after feeling trapped for so long. \
                 <br><br>I know it's going to be a lot of pressure for you, breaking the BNM bond is definitely not an easy decision to make but I'm proud of you for taking that step and doing what's right for you, for your career and for your future. I only hope that we stay in touch and keep the connection alive, and I wish you all the success in life.
         """,
         "text_color":"#52D273",
@@ -142,7 +141,8 @@ def show_message(member):
             st.image(pp, width=450,caption=DSA_member_messages[member]['pic_caption'])
         elif member =="Mujahid":
             st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
-            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> I would like to start off by thanking you for opening so many doors for me. The fact that I'm here in this team, in DSA, is because of you. Other opportunities like the hackathons, the wins, the exposure, the street cred and the connections that I've made in the community were none other because of you.</span>""",unsafe_allow_html=True)
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px">             Working with you felt really good. We would often bounce ideas off of each other and it felt really natural and exciting. You're more than a colleague to me; you're an inspiration, a mentor and a senpai to me. I appreciate the moments where you guided me in navigating the BNM world. You exposed me to the gems and you steered me away from the bullshit, and I take your advice very seriously. \
+                <br><br>I would like to start off by thanking you for opening so many doors for me. The fact that I'm here in this team, in DSA, is because of you. Other opportunities like the hackathons, the wins, the exposure, the street cred and the connections that I've made in the community were none other because of you.</span>""",unsafe_allow_html=True)
         else:
             st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
     with eac_cols[1]:
@@ -203,8 +203,17 @@ def page_content(page_number):
 
 
             st.subheader("Naz after October 4th 2021... :tada: ")
+            # st.write(
+            #     f"""<p><img src="https://media3.giphy.com/media/6nuiJjOOQBBn2/200w.webp?cid=ecf05e47xcmnv9n8vasc1d01665fpyw6u8qee6tg305wyews&rid=200w.webp&ct=g" style="width:500px;height:450px;"></p>""",
+            #     unsafe_allow_html=True,
+            # )  #### Requires internet
+            file_ = open('messages/celebration.gif', "rb")
+            contents = file_.read()
+            data_url = base64.b64encode(contents).decode("utf-8")
+            file_.close()
+
             st.write(
-                f"""<p><img src="https://media3.giphy.com/media/6nuiJjOOQBBn2/200w.webp?cid=ecf05e47xcmnv9n8vasc1d01665fpyw6u8qee6tg305wyews&rid=200w.webp&ct=g" style="width:500px;height:450px;"></p>""",
+                f"""<p><img src="data:image/gif;base64,{data_url}" style="width:500px;height:400px"></p>""",
                 unsafe_allow_html=True,
             )
             st.write("\n")
