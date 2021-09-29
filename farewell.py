@@ -347,29 +347,29 @@ def page_content(page_number):
         st.header("Unable to meet because of MCO... but we still have these!")
 
         #### Naz general photos
-        cols = st.columns([1,1,1,0.5,2])
-        naz_office = Image.open('naz_photos/naz_office.jpg')
-        cols[0].image(naz_office, width=500)
+        cols = st.columns([2,1.7,2])
+        naz_office = Image.open('naz_photos/ili_party.jpeg')
+        cols[0].image(naz_office, width=380)
         naz_pp = Image.open('naz_photos/naz.png')
-        cols[2].image(naz_pp, width=280)
+        cols[1].image(naz_pp, width=300)
         gsy4 = Image.open('naz_photos/Hackathon win with Naz.jpeg')
-        cols[4].image(gsy4, width=400)
+        cols[2].image(gsy4, width=350)
 
 
         #### DSA
-        cols = st.columns([1.8,2.5])
+        cols = st.columns([1.7,2.7])
         naz_flower = Image.open('naz_photos/naz_flower.png')
-        cols[0].image(naz_flower, width=600)
+        cols[0].image(naz_flower, width=400)
         dsa_flower = Image.open('naz_photos/dsa_flower.png')
-        cols[1].image(dsa_flower, width=1020)
+        cols[1].image(dsa_flower, width=700)
         #### With GSY
         cols = st.columns([1,1,1])
         gsy1 = Image.open('naz_photos/gsy1.jpeg')
-        cols[0].image(gsy1, width=500)
+        cols[0].image(gsy1, width=350)
         gsy2 = Image.open('naz_photos/gsy2.jpeg')
-        cols[1].image(gsy2, width=500)
+        cols[1].image(gsy2, width=350)
         gsy3 = Image.open('naz_photos/gsy3.jpeg')
-        cols[2].image(gsy3, width=500)
+        cols[2].image(gsy3, width=350)
         # gsy4 = Image.open('naz_photos/gsy4.jpeg')
         # cols[3].image(gsy4, width=400)
 
@@ -380,7 +380,7 @@ def page_content(page_number):
         )
 
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 0
+    st.session_state['page_num'] = 6
     page_content(st.session_state['page_num'])
 
 # st.write(st.session_state.page_num)
