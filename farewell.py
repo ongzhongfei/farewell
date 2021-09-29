@@ -304,7 +304,7 @@ def page_content(page_number):
             if people == 'Li Ming':
                 cols_to_write = st.columns ([1,6,1.5])
                 cols_to_write[1].write(
-                    f"""<span style="font-size:26px;color:#FFCC66"> {message.strip()}</span> <span style="color:#FFC0CB;font-size:28px;text-align:right"> - <b><i>{people}</i></b></span>""",
+                    f"""<span style="font-size:17px;color:#FFCC66"> {message.strip()}</span> <span style="color:#FFC0CB;font-size:19px;text-align:right"> - <b><i>{people}</i></b></span>""",
                     unsafe_allow_html=True,
                 )
                 # cols_to_write[1].write(
@@ -337,7 +337,7 @@ def page_content(page_number):
                     #     unsafe_allow_html=True,
                     # )
                 cols_to_write[col_picked].write(
-                    f"""<span style="font-size:20px"> {message.strip()}</span>  -  <span style="color:#FFC0CB;font-size:20px"> <b><i>{people}</i></b></span>""",
+                    f"""<span style="font-size:15px"> {message.strip()}</span>  -  <span style="color:#FFC0CB;font-size:15px"> <b><i>{people}</i></b></span>""",
                     unsafe_allow_html=True,
                 )
 
