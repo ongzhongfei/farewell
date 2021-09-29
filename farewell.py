@@ -75,7 +75,7 @@ DSA_member_messages = {
         """,
         "text_color":"#46BCDE",
         'video':"https://www.youtube.com/watch?v=jStNaVCW838",
-        'video_text':"To the most jiwang man I know. Karaoke, we must.",
+        'video_text':"To the most jiwang man I know, I dedicate this song to you, because you are...sempurna :rolling_on_the_floor_laughing:. Karaoke, we must!",
     },
     'Ken':{
         'pic':"pic/ken.png",
