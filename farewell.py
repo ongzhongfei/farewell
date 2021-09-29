@@ -25,7 +25,7 @@ DSA_member_messages = {
         'pic':"pic/ohh.png",
         'pic_caption':'Dr. Ong',
         'gif':'messages/ohh_message.jfif',
-        'gif_width': '380',
+        'gif_width': '280',
         'message': "The Virtual Get-together that you organised was a memorable one.  Don't be a stranger and let's keep in touch. Best wishes.",
         "text_color":"#52D273",
         'video':"https://www.youtube.com/watch?v=tbnzAVRZ9Xc",
@@ -35,7 +35,7 @@ DSA_member_messages = {
         'pic':"pic/nch_pp.jpg",
         'pic_caption':'Chuan Hai',
         'gif':'messages/feeling.gif',
-        'gif_width': '380',
+        'gif_width': '280',
         'message': "Congratulations on your new job. Wishing you all the best.",
         "text_color":"#52D273",
         'video':"https://www.youtube.com/watch?v=sVJQZ16Da_A",
@@ -45,7 +45,7 @@ DSA_member_messages = {
         'pic':"pic/Muja and Naz.jpeg",
         'pic_caption':'Me and Naz on our first hackathon win together!',
         'gif':'messages/im-happy-for-you-mia.gif',
-        'gif_width': '380',
+        'gif_width': '280',
         'message': """
                 <br>I do feel sad that you are leaving us, and I admit, the reasons for that are mainly for selfish reasons as I feel like I could still learn so much more from you. But it's sort of like a bittersweet thing; I do feel sad that you're leaving us, but at the same time, I feel very excited for you with this new opportunity and journey that you're partaking, and I'm excited, I'm really, really excited that you can finally spread your wings after feeling trapped for so long. \
                 <br><br>I know it's going to be a lot of pressure for you, breaking the BNM bond is definitely not an easy decision to make but I'm proud of you for taking that step and doing what's right for you, for your career and for your future. I only hope that we stay in touch and keep the connection alive, and I wish you all the success in life.
@@ -58,7 +58,7 @@ DSA_member_messages = {
         'pic':"pic/peter.png",
         'pic_caption':'Peter',
         'gif':'messages/i-dont-always-win-the-hackathon-but-at-least-i-look-good-trying.jpg',
-        'gif_width': '350',
+        'gif_width': '280',
         'message': "Otai never really goes way. They linger on , for what they have done will echo in eternity.<br>Makan with me ya when we can?",
         "text_color":"#46BCDE",
         'video':"https://www.youtube.com/watch?v=zuf1KuibAeY",
@@ -68,8 +68,11 @@ DSA_member_messages = {
         'pic':"pic/josh_pp_brighter.png",
         'pic_caption':'Keep living the Google dream',
         'gif':'messages/bernie_meme.jpg',
-        'gif_width': '350',
-        'message': "No matter where you work, you will always be my friend until the end. Good luck with your new job. I know you’re going to do great.",
+        'gif_width': '270',
+        'message': """
+        3) I remember back in Michigan, you asked me if you should do a double major in economics and computer science. I said no, but you did it anyway. In hindsight, I think you're right. Sometimes you gotta trust your gut. \
+        <br><br>Continue listening to K-pop, doing your runs, meal prepping, playing your guitar, upgrading that sick workstation and of course, always be coding! See you soon!
+        """,
         "text_color":"#46BCDE",
         'video':"https://www.youtube.com/watch?v=jStNaVCW838",
         'video_text':"To the most jiwang man I know. Karaoke, we must.",
@@ -78,7 +81,7 @@ DSA_member_messages = {
         'pic':"pic/ken.png",
         'pic_caption':'Ken',
         'gif':'messages/ken_goodbye.png',
-        'gif_width': '300',
+        'gif_width': '270',
         'message': "Good luck & all the best Naz! Appreciate your guidance and help all this while especially when I was still new to Python (plz forgive me for my spaghetti codes :wink:). Working with you was a pleasure and I personally learnt a lot from you. Hope someday our paths will cross again :hugging_face:",
         "text_color":"#46BCDE",
         'video':"https://www.youtube.com/watch?v=RgKAFK5djSk",
@@ -88,7 +91,7 @@ DSA_member_messages = {
         'pic':"pic/eilyn_pp.jpg",
         'pic_caption':'Pika Eilyn',
         'gif':'messages/eilyn_message.png',
-        'gif_width': '280',
+        'gif_width': '230',
         'message': "Naz, I am so glad to be working along with you over the past year! I will miss our Kpop chatter, ranting sesh, and the random conversations about our personal visions.  I hope our paths will cross again – let’s catch up whenever IU (or any GFriend members) releases her new album/single! Until then …",
         # "I hope your experience with your next employer is as fun as the time we had here. Best of luck and thank you for everything!",
         "text_color":"#C8A2C8",
@@ -99,7 +102,7 @@ DSA_member_messages = {
         'pic':"pic/zhongfei_pp.jpeg",
         'pic_caption':'First time petting a rabbit',
         'gif':'messages/i-bid-you-farewell-good-luck.gif',
-        'gif_width': '280',
+        'gif_width': '230',
         'message': "Sincerely thank you for all the knowledge you taught since I am in from day 1. Your new team is lucky to have you on board. Wishing you great success in your new role.",
         "text_color":"#C8A2C8",
         'video':"https://www.youtube.com/watch?v=D1PvIWdJ8xo",
@@ -138,13 +141,20 @@ def show_message(member):
     with eac_cols[0]:
         pp = Image.open(DSA_member_messages[member]['pic'])
         if member == "Joshua":
-            st.image(pp, width=450,caption=DSA_member_messages[member]['pic_caption'])
+            st.image(pp, width=300,caption=DSA_member_messages[member]['pic_caption'])
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:15px"> \
+                Farewell Naz! Thanks for always bringing good vibes to the team, generously sharing your knowledge and being the best teammate one could ask for. I want to share a few fond memories I have with you:
+                <br><br> 1 I remember when I first started out in the team, I was struggling to make some slides on neural networks and you stayed back after work to help me out. Thank you again for that. It meant a lot.
+                <br><br> 2) I remember one day I was really stressed out at work and you told me to take a walk to Sasana Kijang to cool off and maybe get a cup of orange juice there. Because that's what you do when you're stressed out. I did end up taking that walk and it was magic. It really helped. </span>""",
+            unsafe_allow_html=True)
         elif member =="Mujahid":
-            st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
-            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px">             Working with you felt really good. We would often bounce ideas off of each other and it felt really natural and exciting. You're more than a colleague to me; you're an inspiration, a mentor and a senpai to me. I appreciate the moments where you guided me in navigating the BNM world. You exposed me to the gems and you steered me away from the bullshit, and I take your advice very seriously. \
-                <br><br>I would like to start off by thanking you for opening so many doors for me. The fact that I'm here in this team, in DSA, is because of you. Other opportunities like the hackathons, the wins, the exposure, the street cred and the connections that I've made in the community were none other because of you.</span>""",unsafe_allow_html=True)
+            st.image(pp, width=250,caption=DSA_member_messages[member]['pic_caption'])
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:15px"> \
+                I would like to start off by thanking you for opening so many doors for me. The fact that I'm here in this team, in DSA, is because of you. Other opportunities like the hackathons, the wins, the exposure, the street cred and the connections that I've made in the community were none other because of you. 
+                <br><br>Working with you felt really good. We would often bounce ideas off of each other and it felt really natural and exciting. You're more than a colleague to me; you're an inspiration, a mentor and a senpai to me. I appreciate the moments where you guided me in navigating the BNM world. You exposed me to the gems and you steered me away from the bullshit, and I take your advice very seriously.</span>""",
+                unsafe_allow_html=True)
         else:
-            st.image(pp, width=380,caption=DSA_member_messages[member]['pic_caption'])
+            st.image(pp, width=255,caption=DSA_member_messages[member]['pic_caption'])
     with eac_cols[1]:
         # """### gif from local file"""
         file_ = open(DSA_member_messages[member]['gif'], "rb")
@@ -156,10 +166,10 @@ def show_message(member):
             f"""<p style="text-align:center;"><img src="data:image/gif;base64,{data_url}" style="width:{DSA_member_messages[member]['gif_width']}px;height:400px;float:center"></p>""",
             unsafe_allow_html=True,
         )
-        st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:21px"> {DSA_member_messages[member]['message']}</span>""",unsafe_allow_html=True)
+        st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:15px"> {DSA_member_messages[member]['message']}</span>""",unsafe_allow_html=True)
     with eac_cols[2]:
         if DSA_member_messages[member]['video_text'] != '':
-            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:16px"> {DSA_member_messages[member]['video_text']}</span>""",unsafe_allow_html=True)
+            st.write(f"""<span style="color:{DSA_member_messages[member]['text_color']};font-size:14px"> {DSA_member_messages[member]['video_text']}</span>""",unsafe_allow_html=True)
         st.video(DSA_member_messages[member]['video'])
 
 def grey_color_func(word, font_size, position, orientation, random_state=None,
@@ -188,7 +198,7 @@ def page_content(page_number):
         with cols[1]:
             # st.header("Congratulations! and goodbye...")
             st.write(
-                f"""<span style="color:#00FFFF;font-size:33px"> <b> Congratulations! and goodbye... <br>to the Meme Master</b></span>""",
+                f"""<span style="color:#00FFFF;font-size:26px"> <b> Congratulations! and goodbye... <br>to the Meme Master</b></span>""",
                 unsafe_allow_html=True,
             )
 
@@ -219,14 +229,14 @@ def page_content(page_number):
             st.write("\n")
     elif page_number == 1:
         st.write(
-            f"""<span style="color:#52D273;font-size:40px"> <b> If work is your second home. Here is your 'second parent'</b></span>""",
+            f"""<span style="color:#52D273;font-size:28px"> <b> If work is your second home. Here is your 'second parent'</b></span>""",
             unsafe_allow_html=True,
         )
         show_message('Dr. Ong')
 
         st.write("***")
         st.write(
-            f"""<span style="color:#52D273;font-size:40px"> <b> And here are your homies...</b></span>""",
+            f"""<span style="color:#52D273;font-size:28px"> <b> And here are your homies...</b></span>""",
             unsafe_allow_html=True,
         )
         show_message('Chuan Hai')   
@@ -236,7 +246,7 @@ def page_content(page_number):
 
     elif page_number == 2:
         st.write(
-            f"""<span style="color:#46BCDE;font-size:40px"> <b> Your nerdy neighbours...</b></span>""",
+            f"""<span style="color:#46BCDE;font-size:28px"> <b> Your nerdy neighbours...</b></span>""",
             unsafe_allow_html=True,
         )
         #### Peter
@@ -258,7 +268,7 @@ def page_content(page_number):
         # show_message('Zhong Fei')
     elif page_number == 3:
         st.write(
-            f"""<span style="color:#C8A2C8;font-size:40px"> <b> And neighbours next door...</b></span>""",
+            f"""<span style="color:#C8A2C8;font-size:28px"> <b> And neighbours next door...</b></span>""",
             unsafe_allow_html=True,
         )
         show_message('Eilyn')   
